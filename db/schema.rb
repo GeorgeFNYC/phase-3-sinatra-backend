@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_10_24_145619) do
     t.string "description"
     t.string "reviews"
     t.string "location"
+    t.string "address"
   end
 
   create_table "users", force: :cascade do |t|

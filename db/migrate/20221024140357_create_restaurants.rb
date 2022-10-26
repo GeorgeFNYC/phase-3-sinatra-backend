@@ -8,6 +8,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :reviews
       t.string :location
+      t.string :address
     end
   end
 end
