@@ -32,7 +32,8 @@ class ApplicationController < Sinatra::Base
       price_point: params[:price_point],
       description: params[:description],
       reviews: params[:reviews],
-      location: params[:location]
+      location: params[:location],
+      address: params[:address]
       )
       restaurants.to_json
     end 
@@ -59,9 +60,9 @@ post '/wishlist' do
   wishlist = Wishlist.create(
     ranking: params[:ranking],
     user_id: params[:user_id],
-    restaurant_id: params[:restaurant_id]
-    )
-    wishlist.to_json
+    restaurant_id: params[:restaurant_id],
+  )
+    wishlist.to_json(:include => :restaurant)
   end 
 
 patch '/wishlist/:id' do
