@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_24_145619) do
+ActiveRecord::Schema.define(version: 2022_10_27_204556) do
 
   create_table "attends", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "user_id"
     t.boolean "been_to"
+  end
+
+  create_table "eateds", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

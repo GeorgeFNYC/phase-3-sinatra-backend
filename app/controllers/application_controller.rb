@@ -57,13 +57,19 @@ get '/wishlist/:id' do
 end
 
 post '/wishlist' do
-  wishlist = Wishlist.create(
-    ranking: params[:ranking],
-    user_id: params[:user_id],
-    restaurant_id: params[:restaurant_id],
-  )
-    wishlist.to_json(:include => :restaurant)
-  end 
+  user = User.find(params[:user_id])
+  dup_array = user.wishlists.select {|item| item.restaurant_id ==  params[:restaurant_id]}
+    if dup_array.length > 0
+      {error: "Duplicate wishlist"}.to_json
+    else
+      wishlist = Wishlist.create(
+        ranking: params[:ranking],
+        user_id: params[:user_id],
+        restaurant_id: params[:restaurant_id]
+        )
+      wishlist.to_json
+    end
+  end
 
 patch '/wishlist/:id' do
   wishlist = Wishlist.find(params[:id])
@@ -75,6 +81,9 @@ delete '/wishlist/:id' do
     wishlist = Wishlist.find(params[:id])
     wishlist.destroy
     wishlist.to_json
+
+
+
   end
 
 get '/attend' do
@@ -112,6 +121,42 @@ delete '/attend/:id' do
   
 
   ##########
+
+
+get '/eated' do
+  eated = Eated.all
+  eated.to_json(:include => :restaurant)
+end
+
+
+get '/eated/:id' do
+ eated = Eated.find(params[:id])
+ eated.to_json(:include => :restaurant)
+
+end
+
+
+post '/eated' do
+  user = User.find(params[:user_id])
+  dup_array = user.eateds.select {|item| item.restaurant_id ==  params[:restaurant_id]}
+    if dup_array.length > 0
+      {error: "Duplicate added"}.to_json
+    else
+      eated = Eated.create(
+        user_id: params[:user_id],
+        restaurant_id: params[:restaurant_id]
+        )
+        eated.to_json
+    end
+  end
+
+
+delete '/eated/:id' do
+  eated = Eated.find(params[:id])
+  eated.destroy
+  eated.to_json
+end
+
 
 
 end
