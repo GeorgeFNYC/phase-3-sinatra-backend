@@ -67,7 +67,7 @@ post '/wishlist' do
         user_id: params[:user_id],
         restaurant_id: params[:restaurant_id]
         )
-      wishlist.to_json
+      wishlist.to_json(:include => :restaurant)
     end
   end
 
