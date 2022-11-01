@@ -132,3 +132,87 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+<hr>
+<h1> Ressport </h1>
+
+<img width="1511" alt="Screen Shot 2022-10-28 at 1 24 40 PM" src="https://user-images.githubusercontent.com/81066555/199337276-f823d3b3-cebb-423c-b61a-e1417ee66145.png">
+
+Welcome to the Ressport App! We believe that going on an adventure doesn’t always require leaving your own backyard and culinary experiences are the perfect way to travel without ever leaving the city.
+
+You will be building a fully functional app that allows the user to browse the top restaurants in all of Manhattans boroughs, add restaurants they would like to try to their wishlist and mark the restaurants they have been to so they can live forever on their restaurant passport.
+
+<h2>LEARNING GOALS</h2>
+
+In this project, the focus is building a Sinatra API backend that uses Active Record for accessing and persisting data in the database. The separate React front end will interact with the database via the API.
+
+<h2>REQUIREMENTS</h2>
+<ul>
+<li>Use Active Record to interact with a database.</li>
+<li>Have at least two models with a one-to-many relationship.</li>
+<li>At a minimum, set up the following API routes in Sinatra:</li>
+<ul>
+<li>create and read actions for both models</li>
+<li>full CRUD capability for one of the models</li>
+</ul>
+<li>Build a separate React frontend application that interacts with the API to perform CRUD actions.</li>
+<li>Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.</li>
+</u>
+<h1>PROJECT OVERVIEW</h1>
+
+<h2>GETTING STARTED</h2>
+<h2>backend setup</h2>
+
+This repository has all the starter code needed to get a Sinatra backend up and running. Fork and clone this repository to get started. Then, run bundle install to install the gems.
+
+<strong>Important:</strong> Be sure you fork a copy of the repo into your GitHub account before cloning it. You can do this by using the link above or by clicking the "Octocat" button at the top of this page, then clicking "Fork" in the upper right corner of the repo page.
+
+The app/controllers/application_controller.rb file has an example GET route handler. Replace this route with routes for your project.
+You can start your server with:
+$ bundle exec rake server
+This will run your server on port http://localhost:9292
+
+Once your backend is set up, begin creating the migration tables that will update your schema, thanks to active records! Add the table name and the data types that correspond with each (this information will be provided below)- think about the relationship given the data each table holds
+
+Restaurants table
+<ul>
+<li>Name, stored as a string</li>
+<li>Image url, stored as a string</li>
+<li>Cuisine, stored as a string</li>
+<li>Prince point, stored as a string</li>
+<li>Description, stored as a string</li>
+<li>Reviews, stored as a string</li>
+<li>Location, stored as a string</li>
+<li>Address, stored as a string</li>
+</ul>
+Users table
+<ul>
+<li>Username, stored as a string</li>
+<li>Password, stored as a string</li>
+</ul>
+Wishlists table
+<ul>
+<li>Restaurant foreign key</li>
+<li>User foreign key</li>
+</ul>
+Attends table
+<ul>
+<li>Restaurant foreign key</li>
+<li>User foreign key</li>
+</ul>
+Eateds table
+<ul>
+<li>Restaurant foreign key</li>
+<li>User foreign key</li>
+</ul>
+Next, run the migrations. This will update the database, and create a schema file, which provides a “snapshot” of the current database.
+
+Create data in the seeds file that correspond with each table, below is a screenshot of the restaurants used but feel free to use your own favorites!
+
+On the model files, set up the relationships between each class by using Active Record macros, this will give you access to many of the methods necessary to work with the data. In pry, try out some of these methods to test that everything is working!
+
+Lastly, for your backend you will set up the routes in the application controller. This is how you will access the CRUD functionality in your web application. Think GET, POST, PATCH and DELETE. When making fetch requests on the frontend- these endpoints will allow React to access the API.
+
+<h2>Frontend</h2>
+
+Run npm start in the directory to get the react started
