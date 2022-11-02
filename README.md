@@ -216,3 +216,7 @@ Lastly, for your backend you will set up the routes in the application controlle
 <h2>Frontend</h2>
 
 Run npm start in the directory to get the react started
+
+<h2>Tools used for Ressport</h2>
+<img width='50' src='https://user-images.githubusercontent.com/81066555/199563984-a016a8a9-14e1-45d4-867c-3d872e7ec15c.svg'> <img width='50' src='https://user-images.githubusercontent.com/81066555/199564243-68f38f85-52f7-422f-86d7-4604e7f591f7.svg'> <img width='50' src='https://user-images.githubusercontent.com/81066555/199564407-419c7a3d-7e03-4b24-a86d-72dd9f0e05c2.svg'> <img width='50' src='https://user-images.githubusercontent.com/81066555/199564561-452b546d-4c89-43f1-86c7-2bc42d5e58d3.svg'> <img width='50' src='https://user-images.githubusercontent.com/81066555/199564633-b678945c-e0d9-4d74-88ba-c5a9312cb493.svg'>
+
